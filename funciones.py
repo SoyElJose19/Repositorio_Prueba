@@ -1,10 +1,10 @@
 import csv
         
 pedidos=[]
+pedido=[]
 
 def registrar_pedidos():
     while True:
-        pedido=[]
  
         try:
             rut=input("Ingrese su RUT (si termina en K, reemplacelo por un 0): ")
