@@ -4,6 +4,7 @@ pedidos=[]
 
 def registrar_pedidos():
     while True:
+        pedido=[]
  
         try:
             rut=input("Ingrese su RUT (si termina en K, reemplacelo por un 0): ")
@@ -11,12 +12,14 @@ def registrar_pedidos():
                 rut.endswith="K"
             elif rut.endswith =="k".upper:
                 print("ERROR! SI TERMINA EN K REEMPLAELO POR UN 0")
+            pedido.append(rut)
         except:    
             print("ERROR! SU RUT DEBE TENER MÍNIMO 8 DIGITOS Y SI TERMINA EN K, REEMPLAZARLO POR UN 0")
         try:
             nombre= input("Ingrese Nombre: ")
             if len(str(nombre.capitalize))>=3 and nombre.isalpha:
-                print("Nombre ingresado...")  
+                print("Nombre ingresado...")
+            pedido.append(nombre)
         except:
             print("ERROR! SU NOMBRE DEBE TENER POR LO MENOS 3 CARACTERES")
 
@@ -24,6 +27,7 @@ def registrar_pedidos():
             direccion= input("Ingrese Dirección: ")
             if len(str(direccion.capitalize))>=6 and direccion.isalpha:
               print("direccion ingresada")
+            pedido.append(direccion)
         except:
             print("ERROR! SU DIRECCIÓN NO ES VALIDA, DEBE TENER COMOM MINIMO 6 CARACTERES")
         try:
@@ -31,6 +35,7 @@ def registrar_pedidos():
             comuna=("santiago","colina","recoleta")
             if len(str(comuna)) ==(0,3):
                 comuna =(comuna+1)
+            pedido.append(comuna)
         except:
             print("ERROR! SELECCIONE UNA COMUNA VALIDA")
 
@@ -40,6 +45,7 @@ def registrar_pedidos():
                 cincokg = 0
             elif cincokg>=1:
                 cincokg = 12500
+            pedido.append(cincokg)
         except:
             print("ERROR! NÚMERO NO VALIDO, DEBE SER ENTRE 0 y 1 COMO MINIMO")
         
@@ -50,21 +56,12 @@ def registrar_pedidos():
                 break
             elif cincokg>=1:
                 quincekg = 25500
-                
+            pedido.append(quincekg)
         except:
             print("ERROR! NÚMERO NO VALIDO, DEBE SER ENTRE 0 y 1 COMO MINIMO")
-        
- 
-
-        pedido={"rut":rut,
-                "nombre":nombre,
-                "direccion":direccion,
-                "comuna":comuna,
-                "cincokg":cincokg,
-                "quincekg":quincekg,
-                }
-    pedidos.append(pedido)
-    print("PEDIDO GUARDADO CON ÉXITO")
+        pedidos.append(pedido)
+        print("PEDIDO GUARDADO CON ÉXITO")
+        break
     
 def listar_pedidos():
     if not pedidos:
