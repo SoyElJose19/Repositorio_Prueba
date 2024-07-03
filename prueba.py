@@ -10,6 +10,7 @@ while True:
     print ("4.- Imprimir hoja de ruta")
     print ("5.- Salir")
     opc =int(input("Ingrese Opcion: "))
+    os.system("cls")
     if opc==1:
         registrar_pedidos()
     elif opc==2:
