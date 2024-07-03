@@ -17,7 +17,7 @@ def registrar_pedidos():
                 return nombre
                 
         except:
-                print("ERROR! SU NOMBRE DEBE TENER POR LO MENOS 3 CARACTERES")
+            print("ERROR! SU NOMBRE DEBE TENER POR LO MENOS 3 CARACTERES")
 
         try:
             direccion= input("Ingrese Dirección: ")
@@ -55,14 +55,24 @@ def registrar_pedidos():
         except:
             print("ERROR! NÚMERO NO VALIDO, DEBE SER ENTRE 0 y 1 COMO MINIMO")
         
+            print ("\nTOTAL:",total)
+            if not cincokg:
+                break
+            elif not quincekg:
+                break
+            else:
+                total = cincokg + quincekg
+        
         pedido={"rut":rut,
                 "nombre":nombre,
                 "direccion":direccion,
                 "comuna":comuna,
                 "cincokg":cincokg,
-                "quincekg":quincekg}
+                "quincekg":quincekg,
+                "total":total}
     pedidos.append(pedido)
     print("PEDIDO GUARDADO CON ÉXITO")
+    
 def listar_pedidos():
     if not pedidos:
         print("NO EXISTEN PEDIDOS, INGRESE ALMENOS UNO")
@@ -75,6 +85,7 @@ def listar_pedidos():
             print("COMUNA:",p["comuna"])
             print("CILINDRO DE 5:",p["cincokg"])
             print("CILINDRO DE 15:",p["quincekg"])
+            print ("TOTAL: ")
             print()
 def buscar_pedidos():
     pass

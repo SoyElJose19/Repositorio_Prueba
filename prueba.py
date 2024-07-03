@@ -1,4 +1,4 @@
-import time, os, csv
+import time, os
 from funciones import *
 
 while True:
